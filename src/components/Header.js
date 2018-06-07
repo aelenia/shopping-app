@@ -4,9 +4,9 @@ import { css } from 'emotion'
 const headerstyles = css`
   height: 10vh;
   width: 100%;
-  position: fixed;
+  position: sticky;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   font-family: 'Sriracha', sans-serif;
   background: white;
