@@ -4,7 +4,7 @@ import { css } from 'emotion'
 const infoStyle = css`
   background-image: linear-gradient(
     0deg,
-    rgba(255, 255, 255, 0.9) 30%,
+    rgba(255, 255, 255, 0.8) 30%,
     transparent
   );
   margin-top: 94px;
