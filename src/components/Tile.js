@@ -8,12 +8,16 @@ const infoStyle = css`
     transparent
   );
   font-style: italic;
-  margin-top: 94px;
+  margin-top: 51%;
   padding: 40px 10px 10px 10px;
 `
 
+const flex = css`
+  display: flex;
+  justify-content: space-between;
+`
+
 const priceStyle = css`
-  float: right;
   font-style: normal;
 `
 
@@ -38,7 +42,7 @@ export default class Tile extends Component {
       <div className={tileStyle}>
         <div className={infoStyle}>
           <div>{title}</div>
-          <div>
+          <div className={flex}>
             <span>{description}</span>
             <span className={priceStyle}>{price}</span>
           </div>
