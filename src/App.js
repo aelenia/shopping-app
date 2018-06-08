@@ -2,15 +2,11 @@ import React, { Component } from 'react'
 import { css } from 'emotion'
 import Header from './components/Header'
 import Tile from './components/Tile'
-import Data from './data.js'
-
-const styles = css`
-  width: 100%;
-`
+import data from './data.js'
 
 class App extends Component {
   state = {
-    products: Data,
+    products: data,
   }
 
   render() {
@@ -23,6 +19,7 @@ class App extends Component {
             description={product.description}
             price={product.price}
             image={product.image}
+            key={product.id}
           />
         ))}
       </div>
