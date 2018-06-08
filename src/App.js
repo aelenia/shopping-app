@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { css } from 'emotion'
+import { css } from './base.css'
 import Header from './components/Header'
 import Tile from './components/Tile'
 import data from './data.js'

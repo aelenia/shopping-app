@@ -31,10 +31,8 @@ export default class Tile extends Component {
       background-size: cover;
       background-repeat: none;
       border: 1px solid white;
-      width: 49.4%;
+      width: 50%;
       height: 180px;
-      margin: 0;
-      font-family: Helvetica Neue, sans-serif;
       color: '8e8e8e';
     `
 
