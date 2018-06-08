@@ -33,7 +33,7 @@ export default class Tile extends Component {
       border: 1px solid white;
       width: 50%;
       height: 180px;
-      color: '8e8e8e';
+      color: #333333;
     `
 
     return (
