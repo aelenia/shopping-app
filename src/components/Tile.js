@@ -7,12 +7,14 @@ const infoStyle = css`
     rgba(255, 255, 255, 0.8) 30%,
     transparent
   );
+  font-style: italic;
   margin-top: 94px;
   padding: 40px 10px 10px 10px;
 `
 
 const priceStyle = css`
   float: right;
+  font-style: normal;
 `
 
 export default class Tile extends Component {
@@ -24,7 +26,8 @@ export default class Tile extends Component {
       background-image: url(${this.props.image});
       background-size: cover;
       background-repeat: none;
-      width: 50%;
+      border: 1px solid white;
+      width: 49.4%;
       height: 180px;
       margin: 0;
       font-family: Helvetica Neue, sans-serif;
