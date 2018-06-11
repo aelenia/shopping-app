@@ -1,28 +1,26 @@
 import React, { Component } from 'react'
 import { css } from './base.css'
-import Header from './components/Header'
-import Tile from './components/Tile'
-import data from './data.js'
+
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
+import reducer from './reducers/reducer'
+import initialState from './reducers/initialState'
+
+import StartPageView from './containers/StartPageView'
+
+const store = createStore(
+  reducer,
+  initialState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 class App extends Component {
-  state = {
-    products: data,
-  }
-
   render() {
     return (
-      <div>
-        <Header />
-        {this.state.products.map(product => (
-          <Tile
-            title={product.title}
-            description={product.description}
-            price={product.price}
-            image={product.image}
-            key={product.id}
-          />
-        ))}
-      </div>
+      <Provider store={store}>
+        <StartPageView />
+      </Provider>
     )
   }
 }
