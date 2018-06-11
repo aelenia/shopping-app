@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from '../components/Header'
+import MenuButton from '../components/MenuButton'
 import Tile from '../components/Tile'
 
 export default class StartPage extends Component {
@@ -7,6 +8,7 @@ export default class StartPage extends Component {
     return (
       <div>
         <Header />
+        <MenuButton />
         {this.props.products.map(product => (
           <Tile
             title={product.title}
