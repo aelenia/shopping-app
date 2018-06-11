@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { css } from 'emotion'
+import { Link } from 'react-router-dom'
 
 const infoStyle = css`
   background-image: linear-gradient(
@@ -23,11 +24,11 @@ const priceStyle = css`
 
 export default class Tile extends Component {
   render() {
-    const { title, description, price } = this.props
+    const { title, type, price, id, image } = this.props
 
     const tileStyle = css`
       display: inline-block;
-      background-image: url(${this.props.image});
+      background-image: url(${image});
       background-size: cover;
       background-repeat: none;
       border: 1px solid white;
@@ -37,15 +38,17 @@ export default class Tile extends Component {
     `
 
     return (
-      <div className={tileStyle}>
-        <div className={infoStyle}>
-          <div>{title}</div>
-          <div className={flex}>
-            <span>{description}</span>
-            <span className={priceStyle}>{price}</span>
+      <Link key={id} to={`/product/${id}`}>
+        <div className={tileStyle}>
+          <div className={infoStyle}>
+            <div>{title}</div>
+            <div className={flex}>
+              <span>{type}</span>
+              <span className={priceStyle}>{price}</span>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     )
   }
 }
