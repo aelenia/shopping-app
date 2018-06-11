@@ -13,9 +13,52 @@ const svgStyle = css`
   padding: 1%;
 `
 
+const infoStyle = css`
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  color: #333333;
+`
+
+const titleStyle = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2em;
+  margin: 7% 0 10% 0;
+`
+
+const priceStyle = css`
+  font-size: 0.8em;
+`
+
+const descriptionStyle = css`
+  margin-bottom: 10%;
+`
+
+const availabilityStyle = css`
+  margin-bottom: 10%;
+  font-style: italic;
+  color: darkred;
+`
+
+const buttonStyle = css`
+  background: white;
+  border: 1px solid #333333;
+  border-radius: 20px;
+  padding: 3% 0 3% 0;
+  font-size: 1em;
+`
+
 export default class ProductPage extends Component {
   render() {
-    const { title, description, price, image } = this.props.product
+    const {
+      title,
+      description,
+      price,
+      image,
+      availability,
+    } = this.props.product
 
     const imageStyle = css`
       background-image: url(${image});
@@ -47,10 +90,16 @@ export default class ProductPage extends Component {
             </svg>
           </Link>
         </div>
-        <div>
-          {title}
-          {description}
-          {price}
+        <div className={infoStyle}>
+          <div className={titleStyle}>
+            <span>{title}</span>
+            <span className={priceStyle}>{price}</span>
+          </div>
+          <div className={descriptionStyle}>{description}</div>
+          <div className={availabilityStyle}>{availability}</div>
+          <button className={buttonStyle} disabled>
+            Add to Cart
+          </button>
         </div>
       </div>
     )

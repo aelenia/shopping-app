@@ -21,15 +21,17 @@ export default [
     price: '159€',
     image: Dress1,
     id: uid(),
+    availability: 'Not available at the moment',
   },
   {
-    title: 'Black & White Bag',
+    title: 'B & W Bag',
     category: 'Bags',
     description:
       'Eyecatcher for every look. Two compartments to store all your things.',
     price: '349€',
     image: Bag1,
     id: uid(),
+    availability: 'Not available at the moment',
   },
   {
     title: 'Striped Dress',
@@ -38,6 +40,7 @@ export default [
     price: '200€',
     image: Dress2,
     id: uid(),
+    availability: 'Not available at the moment',
   },
   {
     title: 'Taupe Sneakers',
@@ -46,6 +49,7 @@ export default [
     price: '129€',
     image: Shoes4,
     id: uid(),
+    availability: 'Not available at the moment',
   },
   {
     title: 'Backpack',
@@ -55,6 +59,7 @@ export default [
     price: '279€',
     image: Bag2,
     id: uid(),
+    availability: 'Not available at the moment',
   },
   {
     title: 'Beige Boots',
@@ -64,6 +69,7 @@ export default [
     price: '139€',
     image: Shoes1,
     id: uid(),
+    availability: 'Not available at the moment',
   },
   {
     title: 'Blue Boots',
@@ -73,6 +79,7 @@ export default [
     price: '169€',
     image: Shoes3,
     id: uid(),
+    availability: 'Not available at the moment',
   },
   {
     title: 'Black Dress',
@@ -82,6 +89,7 @@ export default [
     price: '99€',
     image: Dress4,
     id: uid(),
+    availability: 'Not available at the moment',
   },
   {
     title: 'Red Heels',
@@ -90,6 +98,7 @@ export default [
     price: '149€',
     image: Shoes2,
     id: uid(),
+    availability: 'Not available at the moment',
   },
   {
     title: 'Sparkling Dress',
@@ -98,6 +107,7 @@ export default [
     price: '249€',
     image: Dress3,
     id: uid(),
+    availability: 'Not available at the moment',
   },
   {
     title: 'Colorful Handbag',
@@ -107,6 +117,7 @@ export default [
     price: '359€',
     image: Bag3,
     id: uid(),
+    availability: 'Not available at the moment',
   },
   {
     title: 'Blue Shoes',
@@ -116,5 +127,6 @@ export default [
     price: '59€',
     image: Shoes5,
     id: uid(),
+    availability: 'Not available at the moment',
   },
 ]
