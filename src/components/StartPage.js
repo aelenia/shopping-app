@@ -10,7 +10,7 @@ export default class StartPage extends Component {
         {this.props.products.map(product => (
           <Tile
             title={product.title}
-            type={product.type}
+            category={product.category}
             description={product.description}
             price={product.price}
             image={product.image}

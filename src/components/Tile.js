@@ -10,21 +10,28 @@ const infoStyle = css`
   );
   font-style: italic;
   margin-top: 51%;
-  padding: 40px 10px 10px 10px;
+  padding: 37px 10px 10px 10px;
 `
 
 const flex = css`
   display: flex;
   justify-content: space-between;
+  padding-top: 0.1em;
 `
 
 const priceStyle = css`
   font-style: normal;
 `
 
+const categoryStyle = css`
+  font-size: 0.8em;
+  font-style: normal;
+  padding-top: 0.2em;
+`
+
 export default class Tile extends Component {
   render() {
-    const { title, type, price, id, image } = this.props
+    const { title, category, price, id, image } = this.props
 
     const tileStyle = css`
       display: inline-block;
@@ -43,7 +50,7 @@ export default class Tile extends Component {
           <div className={infoStyle}>
             <div>{title}</div>
             <div className={flex}>
-              <span>{type}</span>
+              <span className={categoryStyle}>{category}</span>
               <span className={priceStyle}>{price}</span>
             </div>
           </div>
