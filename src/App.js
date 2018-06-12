@@ -1,28 +1,43 @@
 import React, { Component } from 'react'
 import { css } from './base.css'
-import Header from './components/Header'
-import Tile from './components/Tile'
-import data from './data.js'
+
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
+import reducer from './reducers/reducer'
+import initialState from './reducers/initialState'
+
+import StartPageView from './containers/StartPageView'
+import ProductView from './containers/ProductView'
+
+const store = createStore(
+  reducer,
+  setupState(),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+
+function setupState() {
+  const state = localStorage.getItem('state')
+  if (state) {
+    return JSON.parse(state)
+  } else {
+    localStorage.setItem('state', JSON.stringify(initialState))
+    return initialState
+  }
+}
 
 class App extends Component {
-  state = {
-    products: data,
-  }
-
   render() {
     return (
-      <div>
-        <Header />
-        {this.state.products.map(product => (
-          <Tile
-            title={product.title}
-            description={product.description}
-            price={product.price}
-            image={product.image}
-            key={product.id}
-          />
-        ))}
-      </div>
+      <Provider store={store}>
+        <Router>
+          <div>
+            <Route exact path="/" component={StartPageView} />
+            <Route path={`/product/:id`} component={ProductView} />
+          </div>
+        </Router>
+      </Provider>
     )
   }
 }
