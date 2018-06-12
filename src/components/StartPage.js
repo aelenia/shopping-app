@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Header from '../components/Header'
-import MenuButton from '../components/MenuButton'
 import Tile from '../components/Tile'
+import MenuView from '../containers/MenuView'
 
 export default class StartPage extends Component {
   render() {
     return (
       <div>
         <Header />
-        <MenuButton />
+        <MenuView />
         {this.props.products.map(product => (
           <Tile
             title={product.title}

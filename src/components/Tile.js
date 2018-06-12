@@ -16,7 +16,6 @@ const infoStyle = css`
 const flex = css`
   display: flex;
   justify-content: space-between;
-  padding-top: 0.1em;
 `
 
 const priceStyle = css`
