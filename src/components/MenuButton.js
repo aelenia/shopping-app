@@ -7,6 +7,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  Collapse,
 } from 'reactstrap'
 
 const StyledDropdownToggle = styled(DropdownToggle)`
@@ -18,9 +19,9 @@ const StyledDropdownToggle = styled(DropdownToggle)`
   border: none;
   border-radius: 50% !important;
   font-size: 2em;
-  height: 80px;
+  height: 60px;
   padding: 0;
-  width: 80px;
+  width: 60px;
 
   &:active,
   &:hover {
@@ -29,22 +30,32 @@ const StyledDropdownToggle = styled(DropdownToggle)`
   }
 `
 
+const StyledDropdownMenu = styled(DropdownMenu)`
+  margin-bottom: 5px;
+`
+
 export default class MenuButton extends Component {
   render() {
-    const { onClick, isDropdownOpen } = this.props
+    const {
+      onMenuClick,
+      onSortClick,
+      onFilterClick,
+      isMenuOpen,
+      isSortVisible,
+      isFilterVisible,
+    } = this.props
     return (
       <ButtonDropdown
-        isOpen={isDropdownOpen}
-        onClick={e => onClick()}
-        direction="up"
+        isOpen={isMenuOpen}
+        direction="down"
         toggle={noFunc}
         className={css`
           position: fixed;
           top: 80vh;
-          right: 10%;
+          right: 5%;
         `}
       >
-        <StyledDropdownToggle>
+        <StyledDropdownToggle onClick={e => onMenuClick()}>
           <svg
             height="32px"
             version="1.1"
@@ -73,11 +84,24 @@ export default class MenuButton extends Component {
             </g>
           </svg>
         </StyledDropdownToggle>
-        <DropdownMenu right>
-          <DropdownItem toggle={false}>Sort</DropdownItem>
+        <StyledDropdownMenu right>
+          <DropdownItem toggle={noFunc} onClick={e => onSortClick()}>
+            <div>Sort</div>
+            <div isVisible={isSortVisible}>
+              <DropdownItem>Price ascending</DropdownItem>
+              <DropdownItem>Price descending</DropdownItem>
+            </div>
+          </DropdownItem>
           <DropdownItem divider />
-          <DropdownItem toggle={false}>Filter</DropdownItem>
-        </DropdownMenu>
+          <DropdownItem toggle={noFunc} onClick={e => onFilterClick()}>
+            <div>Filter</div>
+            <div isVisible={isFilterVisible}>
+              <DropdownItem>Dresses</DropdownItem>
+              <DropdownItem>Shoes</DropdownItem>
+              <DropdownItem>Bags</DropdownItem>
+            </div>
+          </DropdownItem>
+        </StyledDropdownMenu>
       </ButtonDropdown>
     )
   }

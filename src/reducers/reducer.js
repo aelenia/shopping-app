@@ -2,8 +2,12 @@ import Actions from '../actions'
 
 export default (state, action) => {
   switch (action.type) {
-    case Actions.TOGGLE:
-      return { ...state, isDropdownOpen: !state.isDropdownOpen }
+    case Actions.TOGGLEMENU:
+      return { ...state, isMenuOpen: !state.isMenuOpen }
+    case Actions.TOGGLESORT:
+      return { ...state, isSortVisible: !state.isSortVisible }
+    case Actions.TOGGLEFILTER:
+      return { ...state, isFilterVisible: !state.isFilterVisible }
     default:
       return state
   }

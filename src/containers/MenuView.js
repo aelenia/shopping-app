@@ -1,13 +1,17 @@
 import { connect } from 'react-redux'
-import { toggle } from '../actions'
+import { toggleMenu, toggleSort, toggleFilter } from '../actions'
 import MenuButton from '../components/MenuButton'
 
 const mapStateToProps = state => ({
-  isDropdownOpen: state.isDropdownOpen,
+  isMenuOpen: state.isMenuOpen,
+  isSortVisible: state.isSortVisible,
+  isFilterVisible: state.isFilterVisible,
 })
 
 const mapDispatchToProps = dispatch => ({
-  onClick: () => dispatch(toggle()),
+  onMenuClick: () => dispatch(toggleMenu()),
+  onSortClick: () => dispatch(toggleSort()),
+  onFilterClick: () => dispatch(toggleFilter()),
 })
 
 export default connect(

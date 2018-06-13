@@ -2,5 +2,7 @@ import data from '../data'
 
 export default {
   products: data,
-  isDropdownOpen: false,
+  isMenuOpen: false,
+  isSortVisible: false,
+  isFilterVisible: false,
 }
