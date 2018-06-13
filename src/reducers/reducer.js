@@ -12,3 +12,9 @@ export default (state, action) => {
       return state
   }
 }
+
+// if ((isSortVisible = false)) {
+//   className.toggle
+// } else {
+//   return state
+// }

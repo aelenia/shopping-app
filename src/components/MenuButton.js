@@ -32,6 +32,26 @@ const StyledDropdownToggle = styled(DropdownToggle)`
 
 const StyledDropdownMenu = styled(DropdownMenu)`
   margin-bottom: 5px;
+  width: 200px;
+`
+
+const hidden = css`
+  display: none;
+`
+
+const StyledDropdownItem = styled(DropdownItem)`
+  &:hover,
+  &:focus,
+  &:active {
+    background: white;
+    color: black;
+    outline: none;
+  }
+`
+
+const StyledInput = styled('input')`
+  margin-right: 10%;
+  vertical-align: middle;
 `
 
 export default class MenuButton extends Component {
@@ -85,22 +105,40 @@ export default class MenuButton extends Component {
           </svg>
         </StyledDropdownToggle>
         <StyledDropdownMenu right>
-          <DropdownItem toggle={noFunc} onClick={e => onSortClick()}>
-            <div>Sort</div>
-            <div isVisible={isSortVisible}>
-              <DropdownItem>Price ascending</DropdownItem>
-              <DropdownItem>Price descending</DropdownItem>
+          <StyledDropdownItem>
+            <div onClick={e => onSortClick()}>Sort</div>
+            <div
+              isSortVisible={isSortVisible}
+              className={isSortVisible ? '' : hidden}
+            >
+              <StyledDropdownItem>Price ascending</StyledDropdownItem>
+              <StyledDropdownItem>Price descending</StyledDropdownItem>
             </div>
-          </DropdownItem>
+          </StyledDropdownItem>
           <DropdownItem divider />
-          <DropdownItem toggle={noFunc} onClick={e => onFilterClick()}>
-            <div>Filter</div>
-            <div isVisible={isFilterVisible}>
-              <DropdownItem>Dresses</DropdownItem>
-              <DropdownItem>Shoes</DropdownItem>
-              <DropdownItem>Bags</DropdownItem>
+          <StyledDropdownItem>
+            <div onClick={e => onFilterClick()}>Filter</div>
+            <div
+              isFilterVisible={isFilterVisible}
+              className={isFilterVisible ? '' : hidden}
+            >
+              <StyledDropdownItem>
+                <label>
+                  <StyledInput type="checkbox" />Dresses
+                </label>
+              </StyledDropdownItem>
+              <StyledDropdownItem>
+                <label>
+                  <StyledInput type="checkbox" />Shoes
+                </label>
+              </StyledDropdownItem>
+              <StyledDropdownItem>
+                <label>
+                  <StyledInput type="checkbox" />Bags
+                </label>
+              </StyledDropdownItem>
             </div>
-          </DropdownItem>
+          </StyledDropdownItem>
         </StyledDropdownMenu>
       </ButtonDropdown>
     )
