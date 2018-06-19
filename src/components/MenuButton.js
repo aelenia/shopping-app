@@ -93,13 +93,13 @@ export default class MenuButton extends Component {
               className={isSortVisible ? '' : hidden}
             >
               <StyledDropdownItem
-                onClick={e => onAscendingSelected()}
+                onClick={onAscendingSelected}
                 ascendingSelected={ascendingSelected}
               >
                 Price ascending
               </StyledDropdownItem>
               <StyledDropdownItem
-                onClick={e => onDescendingSelected()}
+                onClick={onDescendingSelected}
                 descendingSelected={descendingSelected}
               >
                 Price descending

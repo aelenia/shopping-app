@@ -2,11 +2,11 @@ import Actions from '../actions'
 
 export default (state, action) => {
   switch (action.type) {
-    case Actions.TOGGLE_MENU:
+    case Actions.TOGGLEMENU:
       return { ...state, isMenuOpen: !state.isMenuOpen }
-    case Actions.TOGGLE_SORT:
+    case Actions.TOGGLESORT:
       return { ...state, isSortVisible: !state.isSortVisible }
-    case Actions.TOGGLE_FILTER:
+    case Actions.TOGGLEFILTER:
       return { ...state, isFilterVisible: !state.isFilterVisible }
     case Actions.TOGGLEASCENDING:
       return {
@@ -20,7 +20,7 @@ export default (state, action) => {
         descendingSelected: !state.descendingSelected,
         ascendingSelected: false,
       }
-    case Actions.CHECK_FILTER:
+    case Actions.CHECKFILTER:
       const checkedCategory = action.payload
       return {
         ...state,
