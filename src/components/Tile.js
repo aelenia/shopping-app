@@ -50,7 +50,7 @@ export default class Tile extends Component {
             <div>{title}</div>
             <div className={flex}>
               <span className={categoryStyle}>{category}</span>
-              <span className={priceStyle}>{price}</span>
+              <span className={priceStyle}>{price} €</span>
             </div>
           </div>
         </div>

@@ -7,7 +7,6 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Collapse,
 } from 'reactstrap'
 
 const StyledDropdownToggle = styled(DropdownToggle)`
@@ -60,10 +59,17 @@ export default class MenuButton extends Component {
       onMenuClick,
       onSortClick,
       onFilterClick,
+      onFilterSelect,
+      onAscendingSelected,
+      onDescendingSelected,
       isMenuOpen,
       isSortVisible,
       isFilterVisible,
+      ascendingSelected,
+      descendingSelected,
+      filtered,
     } = this.props
+
     return (
       <ButtonDropdown
         isOpen={isMenuOpen}
@@ -71,8 +77,8 @@ export default class MenuButton extends Component {
         toggle={noFunc}
         className={css`
           position: fixed;
-          top: 80vh;
-          right: 5%;
+          bottom: 10vh;
+          left: 75%;
         `}
       >
         <StyledDropdownToggle onClick={e => onMenuClick()}>
@@ -111,8 +117,18 @@ export default class MenuButton extends Component {
               isSortVisible={isSortVisible}
               className={isSortVisible ? '' : hidden}
             >
-              <StyledDropdownItem>Price ascending</StyledDropdownItem>
-              <StyledDropdownItem>Price descending</StyledDropdownItem>
+              <StyledDropdownItem
+                onClick={e => onAscendingSelected()}
+                ascendingSelected={ascendingSelected}
+              >
+                Price ascending
+              </StyledDropdownItem>
+              <StyledDropdownItem
+                onClick={e => onDescendingSelected()}
+                descendingSelected={descendingSelected}
+              >
+                Price descending
+              </StyledDropdownItem>
             </div>
           </StyledDropdownItem>
           <DropdownItem divider />
@@ -122,21 +138,21 @@ export default class MenuButton extends Component {
               isFilterVisible={isFilterVisible}
               className={isFilterVisible ? '' : hidden}
             >
-              <StyledDropdownItem>
-                <label>
-                  <StyledInput type="checkbox" />Dresses
-                </label>
-              </StyledDropdownItem>
-              <StyledDropdownItem>
-                <label>
-                  <StyledInput type="checkbox" />Shoes
-                </label>
-              </StyledDropdownItem>
-              <StyledDropdownItem>
-                <label>
-                  <StyledInput type="checkbox" />Bags
-                </label>
-              </StyledDropdownItem>
+              {Object.keys(filtered).map(filterName => {
+                const filterValue = filtered[filterName]
+                return (
+                  <StyledDropdownItem key={filterName}>
+                    <label>
+                      <StyledInput
+                        onClick={e => onFilterSelect(filterName)}
+                        type="checkbox"
+                        checked={filterValue}
+                      />
+                      {filterName}
+                    </label>
+                  </StyledDropdownItem>
+                )
+              })}
             </div>
           </StyledDropdownItem>
         </StyledDropdownMenu>
