@@ -2,11 +2,11 @@ import Actions from '../actions'
 
 export default (state, action) => {
   switch (action.type) {
-    case Actions.TOGGLEMENU:
+    case Actions.TOGGLE_MENU:
       return { ...state, isMenuOpen: !state.isMenuOpen }
-    case Actions.TOGGLESORT:
+    case Actions.TOGGLE_SORT:
       return { ...state, isSortVisible: !state.isSortVisible }
-    case Actions.TOGGLEFILTER:
+    case Actions.TOGGLE_FILTER:
       return { ...state, isFilterVisible: !state.isFilterVisible }
     case Actions.TOGGLEASCENDING:
       return {
@@ -33,9 +33,3 @@ export default (state, action) => {
       return state
   }
 }
-
-// if ((isSortVisible = false)) {
-//   className.toggle
-// } else {
-//   return state
-// }
