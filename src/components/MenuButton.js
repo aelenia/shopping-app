@@ -77,7 +77,7 @@ export default class MenuButton extends Component {
         toggle={noFunc}
         className={css`
           position: fixed;
-          bottom: 10vh;
+          bottom: 5vh;
           left: 75%;
         `}
       >
