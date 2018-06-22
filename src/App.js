@@ -10,6 +10,7 @@ import initialState from './reducers/initialState'
 
 import StartPageView from './containers/StartPageView'
 import ProductView from './containers/ProductView'
+import ScrollToTop from './components/ScrollToTop'
 
 const store = createStore(
   reducer,
@@ -32,10 +33,12 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div>
-            <Route exact path="/" component={StartPageView} />
-            <Route path={`/product/:id`} component={ProductView} />
-          </div>
+          <ScrollToTop>
+            <div>
+              <Route exact path="/" component={StartPageView} />
+              <Route path={`/product/:id`} component={ProductView} />
+            </div>
+          </ScrollToTop>
         </Router>
       </Provider>
     )
