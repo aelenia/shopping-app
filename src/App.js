@@ -38,6 +38,7 @@ class App extends Component {
             <div>
               <Route exact path="/" component={StartPageView} />
               <Route path={`/product/:id`} component={ProductView} />
+              <Route path={`/wishlist`} component={ProductView} />
             </div>
           </ScrollToTop>
         </Router>

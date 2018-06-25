@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { css } from 'emotion'
 import { Link } from 'react-router-dom'
-import Heart from './Heart'
+import HeartView from '../containers/HeartView'
 import Arrow from './Arrow'
 
 const infoStyle = css`
@@ -64,67 +64,13 @@ export default class ProductPage extends Component {
       height: 300px;
     `
 
-    const greyHeart = css`
-      position: relative;
-
-      &:before,
-      &:after {
-        position: absolute;
-        content: '';
-        left: 90%;
-        top: 20px;
-        width: 22px;
-        height: 35px;
-        background: #999999;
-        border-radius: 50px 50px 0 0;
-        transform: rotate(-45deg);
-        transform-origin: 0 100%;
-      }
-
-      &:after {
-        left: 84.5%;
-        transform: rotate(45deg);
-        transform-origin: 100% 100%;
-      }
-    `
-
-    const redHeart = css`
-      position: relative;
-
-      &:before,
-      &:after {
-        position: absolute;
-        content: '';
-        left: 90%;
-        top: 20px;
-        width: 22px;
-        height: 35px;
-        background: #ff2a17;
-        border-radius: 50px 50px 0 0;
-        transform: rotate(-45deg);
-        transform-origin: 0 100%;
-      }
-
-      &:after {
-        left: 84.5%;
-        transform: rotate(45deg);
-        transform-origin: 100% 100%;
-      }
-    `
-
-    const { onHeartClick, isLiked } = this.props
-
     return (
       <div>
         <div className={imageStyle}>
           <Link to={`/`}>
             <Arrow />
           </Link>
-          <Heart
-            onClick={onHeartClick}
-            isLiked={isLiked}
-            className={isLiked ? greyHeart : redHeart}
-          />
+          <HeartView />
         </div>
         <div className={infoStyle}>
           <div className={titleStyle}>
