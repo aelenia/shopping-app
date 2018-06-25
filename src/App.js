@@ -11,6 +11,7 @@ import initialState from './reducers/initialState'
 import StartPageView from './containers/StartPageView'
 import ProductView from './containers/ProductView'
 import ScrollToTop from './components/ScrollToTop'
+import WishlistView from './containers/WishlistView'
 
 const store = createStore(
   reducer,

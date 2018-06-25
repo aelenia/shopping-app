@@ -29,6 +29,8 @@ export default (state, action) => {
           [checkedCategory]: !state.filtered[checkedCategory],
         },
       }
+    case Actions.TOGGLELIKE:
+      return { ...state, isLiked: !state.isLiked }
     default:
       return state
   }

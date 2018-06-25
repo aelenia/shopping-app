@@ -1,21 +1,19 @@
 import React, { Component } from 'react'
-import MenuView from '../containers/MenuView'
+import Header from './Header'
+import Tile from './Tile'
 
 export default class Wishlist extends Component {
-  bookmarked = products => {
-    const { isBookmarked } = this.props
+  liked = products => {
+    const { isLiked } = this.props
 
-    return products.filter(product => {
-      product.isBookmarked === true
-    })
+    return products.filter(isLiked === true)
   }
 
   render() {
     return (
       <div>
         <Header />
-        <MenuView />
-        {this.bookmarked(this.props.products).map(product => (
+        {this.liked(this.props.products).map(product => (
           <Tile
             title={product.title}
             category={product.category}
