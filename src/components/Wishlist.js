@@ -3,16 +3,36 @@ import Header from './Header'
 import Tile from './Tile'
 
 export default class Wishlist extends Component {
-  liked = products => {
-    const { isLiked } = this.props
+  // liked(products) {
+  //   return products.filter(product => {
+  //     if (product.isLiked === true) {
+  //       return product
+  //     } else {
+  //       return (
+  //         <div>
+  //           <p>You haven't liked any products yet</p>
+  //           <button>Start shopping</button>
+  //         </div>
+  //       )
+  //     }
+  //   })
+  // }
 
-    return products.filter(isLiked === true)
+  liked = products => {
+    return products.filter(product => {
+      return product.isLiked
+    })
   }
+
+  // liked = products => {
+  //   return products.filter(products.map(product => product.isLiked === true))
+  // }
 
   render() {
     return (
       <div>
         <Header />
+        <p>The things you like:</p>
         {this.liked(this.props.products).map(product => (
           <Tile
             title={product.title}

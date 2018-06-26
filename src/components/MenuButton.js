@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { css } from 'emotion'
 import styled from 'react-emotion'
+import { Link } from 'react-router-dom'
 import Burger from './Burger'
 
 import {
@@ -54,6 +55,10 @@ const StyledInput = styled('input')`
   vertical-align: middle;
 `
 
+const StyledLink = styled(Link)`
+  color: black;
+`
+
 export default class MenuButton extends Component {
   render() {
     const {
@@ -86,6 +91,10 @@ export default class MenuButton extends Component {
           <Burger />
         </StyledDropdownToggle>
         <StyledDropdownMenu right>
+          <StyledDropdownItem>
+            <StyledLink to={`/wishlist`}>Wishlist</StyledLink>
+          </StyledDropdownItem>
+          <DropdownItem divider />
           <StyledDropdownItem>
             <div onClick={onSortClick}>Sort</div>
             <div

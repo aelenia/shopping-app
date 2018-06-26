@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { css } from 'emotion'
 import { Link } from 'react-router-dom'
-import HeartView from '../containers/HeartView'
+import Heart from './Heart'
 import Arrow from './Arrow'
 
 const infoStyle = css`
@@ -30,7 +30,7 @@ const descriptionStyle = css`
 const availabilityStyle = css`
   margin-bottom: 10%;
   font-style: italic;
-  color: red;
+  color: #ff2a17;
 `
 
 const buttonStyle = css`
@@ -42,10 +42,6 @@ const buttonStyle = css`
 `
 
 export default class ProductPage extends Component {
-  componentDidUpdate() {
-    window.scrollTo(0, 0)
-  }
-
   render() {
     const {
       title,
@@ -53,7 +49,11 @@ export default class ProductPage extends Component {
       price,
       image,
       availability,
+      id,
+      isLiked,
     } = this.props.product
+
+    const { onHeartClick } = this.props
 
     const imageStyle = css`
       background-image: url(${image});
@@ -70,7 +70,7 @@ export default class ProductPage extends Component {
           <Link to={`/`}>
             <Arrow />
           </Link>
-          <HeartView />
+          <Heart id={id} onHeartClick={onHeartClick} isLiked={isLiked} />
         </div>
         <div className={infoStyle}>
           <div className={titleStyle}>

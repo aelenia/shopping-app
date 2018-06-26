@@ -11,6 +11,5 @@ export default {
     Dresses: false,
     Shoes: false,
     Bags: false,
-    isLiked: false,
   },
 }

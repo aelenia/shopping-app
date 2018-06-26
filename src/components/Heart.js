@@ -51,11 +51,11 @@ const redHeart = css`
 
 export default class Heart extends Component {
   render() {
-    const { onHeartClick, isLiked } = this.props
+    const { onHeartClick, isLiked, id } = this.props
 
     return (
       <div
-        onClick={onHeartClick}
+        onClick={e => onHeartClick(id)}
         isLiked={isLiked}
         className={isLiked ? redHeart : greyHeart}
       />
