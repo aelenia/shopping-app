@@ -3,6 +3,7 @@ import { css } from 'emotion'
 import styled from 'react-emotion'
 import { Link } from 'react-router-dom'
 import Burger from './Burger'
+import MenuHeart from './MenuHeart'
 
 import {
   ButtonDropdown,
@@ -92,7 +93,9 @@ export default class MenuButton extends Component {
         </StyledDropdownToggle>
         <StyledDropdownMenu right>
           <StyledDropdownItem>
-            <StyledLink to={`/wishlist`}>Wishlist</StyledLink>
+            <StyledLink to={`/wishlist`}>
+              Likes <MenuHeart />
+            </StyledLink>
           </StyledDropdownItem>
           <DropdownItem divider />
           <StyledDropdownItem>
