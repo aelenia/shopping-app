@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { css } from 'emotion'
-import styled from 'react-emotion'
 import { Link } from 'react-router-dom'
+import styled from 'react-emotion'
 import Burger from './Burger'
 import MenuHeart from './MenuHeart'
 
@@ -72,8 +72,6 @@ export default class MenuButton extends Component {
       isMenuOpen,
       isSortVisible,
       isFilterVisible,
-      ascendingSelected,
-      descendingSelected,
       filtered,
     } = this.props
 
@@ -100,20 +98,11 @@ export default class MenuButton extends Component {
           <DropdownItem divider />
           <StyledDropdownItem>
             <div onClick={onSortClick}>Sort</div>
-            <div
-              isSortVisible={isSortVisible}
-              className={isSortVisible ? '' : hidden}
-            >
-              <StyledDropdownItem
-                onClick={onAscendingSelected}
-                ascendingSelected={ascendingSelected}
-              >
+            <div className={isSortVisible ? '' : hidden}>
+              <StyledDropdownItem onClick={onAscendingSelected}>
                 Price ascending
               </StyledDropdownItem>
-              <StyledDropdownItem
-                onClick={onDescendingSelected}
-                descendingSelected={descendingSelected}
-              >
+              <StyledDropdownItem onClick={onDescendingSelected}>
                 Price descending
               </StyledDropdownItem>
             </div>
@@ -121,10 +110,7 @@ export default class MenuButton extends Component {
           <DropdownItem divider />
           <StyledDropdownItem>
             <div onClick={onFilterClick}>Filter</div>
-            <div
-              isFilterVisible={isFilterVisible}
-              className={isFilterVisible ? '' : hidden}
-            >
+            <div className={isFilterVisible ? '' : hidden}>
               {Object.keys(filtered).map(filterName => {
                 const filterValue = filtered[filterName]
                 return (
