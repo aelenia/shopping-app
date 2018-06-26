@@ -26,7 +26,7 @@ const StyledButton = styled('button')`
   font-size: 1em;
   padding: 3% 0 3% 0;
   margin-top: 8%;
-  width: 250px;
+  width: 245px;
 `
 
 export default class Wishlist extends Component {

@@ -6,8 +6,8 @@ export default function MySVG() {
     position: absolute;
     top: 3%;
     left: 5%;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     background: rgba(102, 102, 102, 0.6);
     border-radius: 50%;
     padding: 1%;

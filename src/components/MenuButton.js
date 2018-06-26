@@ -76,8 +76,6 @@ export default class MenuButton extends Component {
       isMenuOpen,
       isSortVisible,
       isFilterVisible,
-      ascendingSelected,
-      descendingSelected,
       filtered,
     } = this.props
 
@@ -104,31 +102,19 @@ export default class MenuButton extends Component {
           <DropdownItem divider />
           <StyledDiv>
             <div onClick={onSortClick}>Sort</div>
-            <div
-              isSortVisible={isSortVisible}
-              className={isSortVisible ? '' : hidden}
-            >
-              <StyledDropdownItem
-                onClick={onAscendingSelected}
-                ascendingSelected={ascendingSelected}
-              >
+            <div className={isSortVisible ? '' : hidden}>
+              <StyledDropdownItem onClick={onAscendingSelected}>
                 Price ascending
               </StyledDropdownItem>
-              <StyledDropdownItem
-                onClick={onDescendingSelected}
-                descendingSelected={descendingSelected}
-              >
+              <StyledDropdownItem onClick={onDescendingSelected}>
                 Price descending
               </StyledDropdownItem>
             </div>
           </StyledDiv>
           <DropdownItem divider />
-          <StyledDropdownItem>
+          <StyledDiv>
             <div onClick={onFilterClick}>Filter</div>
-            <div
-              isFilterVisible={isFilterVisible}
-              className={isFilterVisible ? '' : hidden}
-            >
+            <div className={isFilterVisible ? '' : hidden}>
               {Object.keys(filtered).map(filterName => {
                 const filterValue = filtered[filterName]
                 return (
@@ -145,7 +131,7 @@ export default class MenuButton extends Component {
                 )
               })}
             </div>
-          </StyledDropdownItem>
+          </StyledDiv>
         </StyledDropdownMenu>
       </ButtonDropdown>
     )
