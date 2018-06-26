@@ -8,8 +8,8 @@ const redHeart = css`
   &:after {
     position: absolute;
     content: '';
-    left: 62%;
-    top: -32px;
+    left: 49.5%;
+    top: 10px;
     width: 19px;
     height: 30px;
     background: #ff2a17;
@@ -19,7 +19,7 @@ const redHeart = css`
   }
 
   &:after {
-    left: 56%;
+    left: 43.5%;
     transform: rotate(45deg);
     transform-origin: 100% 100%;
   }

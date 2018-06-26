@@ -13,6 +13,7 @@ const headerstyles = css`
   font-family: 'Sriracha', sans-serif;
   background: white;
   color: #25eaed;
+  box-shadow: 0px 0px 15px rgba(102, 102, 102, 0.4);
 
   &:focus,
   &:active {

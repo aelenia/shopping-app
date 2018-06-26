@@ -5,9 +5,28 @@ import { Link } from 'react-router-dom'
 import Tile from './Tile'
 import MiniHeart from './MiniHeart'
 
-const StyledDiv = styled('div')`
+const StyledHeadline = styled('div')`
   font-size: 1.3em;
-  margin: 8%;
+  margin: 10% 8% 20% 8%;
+  text-align: center;
+`
+
+const StyledDiv = styled('div')`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25% 8% 8% 8%;
+`
+
+const StyledButton = styled('button')`
+  background: white;
+  border: 1px solid #333333;
+  border-radius: 20px;
+  font-size: 1em;
+  padding: 3% 0 3% 0;
+  margin-top: 8%;
+  width: 250px;
 `
 
 export default class Wishlist extends Component {
@@ -22,9 +41,9 @@ export default class Wishlist extends Component {
     return (
       <div>
         <Header />
-        <StyledDiv>
-          The things you like <MiniHeart />
-        </StyledDiv>
+        <StyledHeadline>
+          The things you liked <MiniHeart />
+        </StyledHeadline>
         {likedProducts.length ? (
           likedProducts.map(product => (
             <Tile
@@ -38,12 +57,12 @@ export default class Wishlist extends Component {
             />
           ))
         ) : (
-          <div>
+          <StyledDiv>
             <p>You haven't liked any products yet</p>
             <Link to={'/'}>
-              <button>Start shopping</button>
+              <StyledButton>Start shopping</StyledButton>
             </Link>
-          </div>
+          </StyledDiv>
         )}
       </div>
     )
