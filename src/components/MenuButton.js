@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { css } from 'emotion'
-import styled from 'react-emotion'
 import { Link } from 'react-router-dom'
+import styled from 'react-emotion'
 import Burger from './Burger'
 import MenuHeart from './MenuHeart'
 
