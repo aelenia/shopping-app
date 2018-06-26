@@ -1,39 +1,50 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import styled from 'react-emotion'
+import { Link } from 'react-router-dom'
 import Tile from './Tile'
 import MiniHeart from './MiniHeart'
 
-const StyledP = styled('p')`
+const StyledDiv = styled('div')`
   font-size: 1.3em;
   margin: 8%;
 `
 
 export default class Wishlist extends Component {
-  liked = products => {
-    return products.filter(product => {
+  liked = () => {
+    return this.props.products.filter(product => {
       return product.isLiked
     })
   }
 
   render() {
+    const likedProducts = this.liked()
     return (
       <div>
         <Header />
-        <StyledP>
+        <StyledDiv>
           The things you like <MiniHeart />
-        </StyledP>
-        {this.liked(this.props.products).map(product => (
-          <Tile
-            title={product.title}
-            category={product.category}
-            description={product.description}
-            price={product.price}
-            image={product.image}
-            key={product.id}
-            id={product.id}
-          />
-        ))}
+        </StyledDiv>
+        {likedProducts.length ? (
+          likedProducts.map(product => (
+            <Tile
+              title={product.title}
+              category={product.category}
+              description={product.description}
+              price={product.price}
+              image={product.image}
+              key={product.id}
+              id={product.id}
+            />
+          ))
+        ) : (
+          <div>
+            <p>You haven't liked any products yet</p>
+            <Link to={'/'}>
+              <button>Start shopping</button>
+            </Link>
+          </div>
+        )}
       </div>
     )
   }

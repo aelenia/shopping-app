@@ -13,6 +13,12 @@ const headerstyles = css`
   font-family: 'Sriracha', sans-serif;
   background: white;
   color: #25eaed;
+
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: none;
+  }
 `
 
 export default class Header extends Component {

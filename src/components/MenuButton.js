@@ -60,6 +60,10 @@ const StyledLink = styled(Link)`
   color: black;
 `
 
+const StyledDiv = styled('div')`
+  margin-left: 12%;
+`
+
 export default class MenuButton extends Component {
   render() {
     const {
@@ -98,7 +102,7 @@ export default class MenuButton extends Component {
             </StyledLink>
           </StyledDropdownItem>
           <DropdownItem divider />
-          <StyledDropdownItem>
+          <StyledDiv>
             <div onClick={onSortClick}>Sort</div>
             <div
               isSortVisible={isSortVisible}
@@ -117,7 +121,7 @@ export default class MenuButton extends Component {
                 Price descending
               </StyledDropdownItem>
             </div>
-          </StyledDropdownItem>
+          </StyledDiv>
           <DropdownItem divider />
           <StyledDropdownItem>
             <div onClick={onFilterClick}>Filter</div>
