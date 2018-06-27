@@ -7,7 +7,7 @@ export default function MySVG() {
       viewBox="0 0 25 25"
       width="32px"
       xmlns="http://www.w3.org/2000/svg"
-      xmlnsSketch="http://www.bohemiancoding.com/sketch/ns"
+      xmlnssketch="http://www.bohemiancoding.com/sketch/ns"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <title />
@@ -15,10 +15,10 @@ export default function MySVG() {
       <defs />
       <g
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         id="TabBar-Icons"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
       >
         <g fill={'white'} id="Hamburger-Round">
           <path

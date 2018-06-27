@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { css } from 'emotion'
+import { Link } from 'react-router-dom'
 
 const headerstyles = css`
   height: 10vh;
@@ -12,14 +13,23 @@ const headerstyles = css`
   font-family: 'Sriracha', sans-serif;
   background: white;
   color: #25eaed;
+  box-shadow: 0px 0px 15px rgba(102, 102, 102, 0.4);
+
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline: none;
+  }
 `
 
 export default class Header extends Component {
   render() {
     return (
-      <div className={headerstyles}>
-        <h1>shop!</h1>
-      </div>
+      <Link to={'/'}>
+        <div className={headerstyles}>
+          <h1>shop!</h1>
+        </div>
+      </Link>
     )
   }
 }

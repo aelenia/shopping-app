@@ -29,6 +29,20 @@ export default (state, action) => {
           [checkedCategory]: !state.filtered[checkedCategory],
         },
       }
+    case Actions.TOGGLELIKE:
+      const index = state.products.findIndex(
+        product => product.id === action.payload
+      )
+      const selectedProduct = state.products[index]
+
+      return {
+        ...state,
+        products: [
+          ...state.products.slice(0, index),
+          { ...selectedProduct, isLiked: !selectedProduct.isLiked },
+          ...state.products.slice(index + 1),
+        ],
+      }
     default:
       return state
   }

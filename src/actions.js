@@ -7,6 +7,7 @@ const Actions = {
   TOGGLEASCENDING: 'TOGGLEASCENDING',
   TOGGLEDESCENDING: 'TOGGLEDESCENDING',
   CHECKFILTER: 'CHECKFILTER',
+  TOGGLELIKE: 'TOGGLELIKE',
 }
 
 export default Actions
@@ -17,3 +18,4 @@ export const toggleFilter = createAction(Actions.TOGGLEFILTER)
 export const toggleAscending = createAction(Actions.TOGGLEASCENDING)
 export const toggleDescending = createAction(Actions.TOGGLEDESCENDING)
 export const checkFilter = createAction(Actions.CHECKFILTER)
+export const toggleLike = createAction(Actions.TOGGLELIKE)

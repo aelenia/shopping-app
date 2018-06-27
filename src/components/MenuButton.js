@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { css } from 'emotion'
 import styled from 'react-emotion'
+import { Link } from 'react-router-dom'
 import Burger from './Burger'
+import MenuHeart from './MenuHeart'
 
 import {
   ButtonDropdown,
@@ -54,6 +56,14 @@ const StyledInput = styled('input')`
   vertical-align: middle;
 `
 
+const StyledLink = styled(Link)`
+  color: black;
+`
+
+const StyledDiv = styled('div')`
+  margin-left: 12%;
+`
+
 export default class MenuButton extends Component {
   render() {
     const {
@@ -87,6 +97,12 @@ export default class MenuButton extends Component {
         </StyledDropdownToggle>
         <StyledDropdownMenu right>
           <StyledDropdownItem>
+            <StyledLink to={`/wishlist`}>
+              Likes <MenuHeart />
+            </StyledLink>
+          </StyledDropdownItem>
+          <DropdownItem divider />
+          <StyledDiv>
             <div onClick={onSortClick}>Sort</div>
             <div
               isSortVisible={isSortVisible}
@@ -105,7 +121,7 @@ export default class MenuButton extends Component {
                 Price descending
               </StyledDropdownItem>
             </div>
-          </StyledDropdownItem>
+          </StyledDiv>
           <DropdownItem divider />
           <StyledDropdownItem>
             <div onClick={onFilterClick}>Filter</div>
